@@ -1,0 +1,251 @@
+html, body{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto';
+  overflow: hidden;
+}
+
+#page2{
+  display: none;
+}
+
+#page3{
+  display: none;
+}
+
+.all{
+  width: 100px;
+  position: absolute;
+  left: 0%;
+/*   left: 90%; */
+  -webkit-transform: rotate(270deg);
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 5px;
+  font-weight: 500;
+  /*  Keep on top of .view-all  */
+  z-index: 200;
+  cursor: pointer;
+}
+
+.view-all{
+
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #a8bedc;
+  margin-left: calc(-100% + 80px);
+}
+
+.preview{
+  width: 300px;
+  height: 250px;
+}
+
+.preview img{
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.preview h3{
+  margin: -25px 0px 0px -20px;
+/*   margin-top: -30px; */
+  font-size: 2rem;
+  color: white;
+}
+
+.page{
+  position: relative;
+  width: 860px;
+  height: 350px;
+}
+
+.page .text{
+  height: 100%;
+  position: relative;
+}
+
+h1{
+/*   font-weight: 700 */
+  font-size: 70px;
+  letter-spacing: -.5px;
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+
+.page img{
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  object-fit: cover;
+  float: right;
+  z-index: -1;
+  right: 0;
+  top: -25px;
+  border-radius: 5px;
+}
+
+.description{
+  width: 200px;
+  font-size: 14px;
+  color: #908e8e
+}
+
+.more{
+  position: absolute;
+  bottom: 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.arrow{
+  right: 20px;
+  position: absolute;
+}
+
+.arrow svg{
+  width: 30px;
+  height: 30px;
+   cursor: pointer;
+}
+
+.icons{
+  position: absolute;
+  bottom: 20px;
+  right: 60px;
+  display: flex;
+  z-index: 200;
+}
+
+.icons svg{
+  width: 20px;
+  height: 20px;
+  padding: 0px 5px;
+
+}
+
+/*
+-----------------------------
+        Animations
+-----------------------------
+*/
+
+.out-text{
+  animation: movedown-out 1.5s ease-in;
+}
+
+.out-img{
+  animation: moveup-out 1.5s ease-in;
+}
+
+.in-text{
+  animation: movedown-in 2s cubic-bezier(0, 0, 0.03, 0.98);
+}
+
+.in-img{
+  animation: moveup-in 2s cubic-bezier(0, 0, 0.03, 0.98);
+}
+
+.open-slider{
+  animation: open-view-slider 3s forwards;
+}
+
+.open-slider-text{
+  animation: open-view-text 3s forwards;
+}
+.close-slider{
+  animation: close-view-slider 3s forwards;
+}
+
+.close-slider-text{
+  animation: close-view-text 3s forwards;
+}
+
+@keyframes movedown-out{
+  0%{
+    margin-top:0;
+    opacity: 1;
+  }
+  100%{
+    margin-top: 800px;
+    opacity: 0;
+  }
+}
+
+@keyframes moveup-out{
+  0%{
+    top: -25px;
+    opacity: 1;
+  }
+  100%{
+    top: -800px;
+  }
+}
+
+@keyframes movedown-in{
+  100%{
+    margin-top:0;
+  }
+  0%{
+    margin-top: 800px;
+  }
+}
+
+@keyframes moveup-in{
+  100%{
+    top: -25px;
+  }
+  0%{
+    top: -800px;
+  }
+}
+
+@keyframes open-view-slider{
+  0%{
+     margin-left: calc(-100% + 80px);
+  }
+  100%{
+     margin-left: 0;
+  }
+}
+
+@keyframes open-view-text{
+  0%{
+    left: 0%;
+  }
+  100%{
+    left: 93%;
+  }
+}
+
+@keyframes close-view-slider{
+  0%{
+     margin-left: 0;
+  }
+  100%{
+     margin-left: calc(-100% + 80px);
+  }
+}
+
+@keyframes close-view-text{
+  0%{
+    left: 93%;
+  }
+  100%{
+    left: 0%;
+  }
+}
